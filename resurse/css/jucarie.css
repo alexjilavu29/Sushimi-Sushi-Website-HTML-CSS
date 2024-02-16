@@ -1,0 +1,41 @@
+h2{
+    padding:0.4rem;
+}
+#art-jucarie{
+    margin:0 auto;
+    width:70%;
+    max-width:700px;
+    background-color: var(--culoare-background);
+    box-shadow: 0px 0px 10px 5px rgb(253, 225, 225);
+    padding:0.4rem;
+}
+
+#art-jucarie p{
+    margin:0;
+    padding:0.4rem;
+    font-weight:bold;
+    font-size:1.1rem;
+}
+
+#art-jucarie p span{
+    font-weight: normal;
+}
+#art-jucarie p:nth-of-type(even){
+    background-color: rgb(171, 197, 171);
+}
+#art-jucarie p:nth-of-type(odd){
+    background-color: rgb(218, 184, 184);
+}
+.imag-jucarie{
+    text-align: center;
+}
+.imag-jucarie img{
+    width:50%;
+    height:auto;
+}
+@media screen and (max-width: 700px){
+    #art-jucarie{
+        margin:0 auto;
+        width:95%;
+    }
+}

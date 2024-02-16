@@ -1,0 +1,117 @@
+
+#grid_pagina{       /* Task 2.2 (layout-responsive) */
+    display:grid;
+    
+
+    grid-template-areas: 
+                         "utilizatori_online" 
+                         "date_utilizator"
+                         "date_server"
+                         "calendar "
+                         "program"
+                         "anunturi"
+                         "poveste"
+                         "poveste"
+                         "poveste"
+                         "poveste";
+    padding:4%;
+
+
+    grid-gap:4px;
+}
+#grid_pagina section{
+
+    border:2px dotted rgb(209, 179, 178);
+    border-image:url("../imagini/background_grid.jpg") 200 round;
+    padding:4%;
+}
+
+#grid-galerie figure{
+    margin:0;
+} 
+
+#grid-galerie {
+    border-top: none;
+    border-right: none;
+      display:grid;
+    margin:0;
+      grid-template-columns: 684px;
+      row-gap:0px;
+      grid-column-gap:0px;
+      grid-template-rows: 304px;
+      padding: 0px;
+  
+     }
+     #grid-galerie img{
+      border-top: none;
+      border-right: none;
+       width: 684px;
+       height: 304px;
+  
+     }
+     .container_hr{
+        position: relative;
+        text-align: center;
+       }
+       .hr_stil{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:684px;
+       }
+     
+     
+     .container {
+        position: relative;
+        text-align: center;
+        color: white;
+        }
+        .background_rosu{
+            position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:684px;
+        height:140px;
+        opacity: 80%;
+        }
+        .centru {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        }
+#welcome{
+    grid-area: welcome;
+}
+
+#utilizatori_online{
+    grid-area: utilizatori_online;
+}
+
+#date_utilizator{
+    grid-area: date_utilizator;
+}
+
+#date_server{
+    grid-area: date_server;
+}
+
+#calendar{
+    grid-area: calendar;
+}
+
+#anunturi{
+    grid-area: anunturi;
+}
+
+#program{
+    grid-area: program;
+}
+
+#poveste{
+    grid-area: poveste;
+}
+ 

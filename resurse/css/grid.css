@@ -1,0 +1,58 @@
+
+#grid_pagina{       /* Task 2.2 (layout-responsive) */
+    display:grid;
+    
+
+    grid-template-areas: 
+                         "utilizatori_online date_utilizator date_utilizator date_server" 
+                         "calendar calendar program program"
+                         "anunturi anunturi program program"
+                         "poveste poveste poveste poveste"
+                         "poveste poveste poveste poveste"
+                         "poveste poveste poveste poveste"
+                         "poveste poveste poveste poveste";
+    padding:4%;
+
+
+    grid-gap:10px;
+}
+#grid_pagina section{
+
+    border:5px dotted rgb(209, 179, 178);
+    border-image:url("../imagini/background_grid.jpg") 200 round;
+    padding:4%;
+}
+
+ 
+#welcome{
+    grid-area: welcome;
+}
+
+#utilizatori_online{
+    grid-area: utilizatori_online;
+}
+
+#date_utilizator{
+    grid-area: date_utilizator;
+}
+
+#date_server{
+    grid-area: date_server;
+}
+
+#calendar{
+    grid-area: calendar;
+}
+
+#anunturi{
+    grid-area: anunturi;
+}
+
+#program{
+    grid-area: program;
+}
+
+#poveste{
+    grid-area: poveste;
+}
+ 

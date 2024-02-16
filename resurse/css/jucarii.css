@@ -1,0 +1,117 @@
+ main{
+    --padd-main:1rem;
+    padding-left:var(--padd-main);
+    padding-right:var(--padd-main);
+}
+
+.grid-jucarii{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap:10px;
+}
+
+ 
+#total_jucarii .jucarie:nth-child(8n + 2)  {
+  background: rgba(235, 148, 122, 0.685);
+}
+
+#total_jucarii .jucarie:nth-child(8n + 4){
+    background: rgba(235, 148, 122, 0.658);
+}
+#total_jucarii .jucarie:nth-child(8n + 5){
+    background: rgba(175, 230, 187, 0.856);
+}
+#total_jucarii .jucarie:nth-child(8n + 7){
+    background: rgba(175, 230, 187, 0.842);
+}
+.grid-jucarii .jucarie{
+    border-radius: 2rem;
+    box-shadow: 0px 0px 0.8rem 0.3rem rgb(255, 128, 96);
+    overflow: hidden;
+}
+/*
+.grid-jucarii .jucarie h3{
+    background-color: var(--culoare-background);
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+  
+  #total_jucarii .jucarie:nth-child(8n + 2),
+  #total_jucarii .jucarie:nth-child(8n + 4) {
+    background: rgb(223, 105, 105);
+  }
+  
+  #total_jucarii .jucarie:nth-child(8n + 5),
+  #total_jucarii .jucarie:nth-child(8n + 7) {
+    background: rgb(145, 145, 237);
+  }
+  
+.grid-jucarii .nume h3 a{
+    color:black;
+}
+.grid-jucarii .nume h3 a:hover{
+    color:white;
+}
+.grid-jucarii .nume figure{
+    text-align: center;
+}
+.grid-jucarii .nume figure img{
+    border:1px solid grey
+}
+.grid-jucarii .nume .info-juc{
+    display:flex;
+    background-color: var(--culoare-highlight);
+}
+.grid-jucarii .nume .info-juc p{
+    width:30%;
+    text-align:center;
+    font-weight:bold;
+}
+
+.grid-jucarii .nume p.categorie{
+
+    text-align:center;
+    font-weight:bold;
+}
+
+.info-jucarii{
+    background-color: var(--culoare-highlight);
+    padding:0.2rem;
+    box-shadow: 0px 0px 0.5rem 0.15rem grey;
+}
+
+.jucarie{
+    position: relative;
+} */
+
+#total_jucarii .grid-jucarii {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+  }
+  
+  #total_jucarii .jucarie + p {
+    transform: rotate(0);
+    transition: transform 3s;
+  }
+  
+  #total_jucarii .jucarie:hover + p {
+    border: 2px solid greenyellow;
+    transform: rotate(45deg);
+    transition: transform 3s;
+  }
+ 
+  
+  @media screen and (max-width: 1000px) {
+    #total_jucarii .grid-jucarii {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    #total_jucarii .jucarie {
+      background: #fff !important;
+    }
+  }
+  

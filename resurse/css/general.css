@@ -1,0 +1,154 @@
+@import "grid.css";
+@import "calendar.css";
+
+
+body{   /* Task 2.1 schema-cromatica */
+    --margine-main:1000px;
+    --inaltime-meniu:30px;
+    --culoare-background:rgb(209, 179, 178);
+    --culoare-text:#400200;
+    --culoare-border:#BF0600;
+    --culoare-highlight:#FF0800;
+    --culoare-umbre:#800400;
+    --imag-body-backgr:url("../imagini/background-flori.jpg");
+    --gradient-body:linear-gradient(transparent, transparent 10%, rgb(211, 196, 186) 100%, transparent 30%, transparent); 
+   
+
+    margin-top:0;
+    margin-bottom:0;
+    --body-padding:3rem;
+
+
+    --padding-intern:4%;
+    color:var(--cl-text);
+    background-image:var(--gradient-body), var(--imag-body-backgr);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-left:var(--body-padding);
+    padding-right:var(--body-padding);
+    padding-top:0;
+    padding-bottom:0;
+    min-width:330px;
+    --color:rgba(255,0,0,1);
+}
+
+
+.taburi-iframe a{   /* Task 2.4 stilizare-taburi */
+    text-decoration:none;
+    width:100px;
+    height:40px;
+    /*ca sa se comporte ca un bloc in sensul ca sa ii dau dimensiuni
+    dar sa vina unele langa altele ca elemente inline, nu unele sub altele
+    
+    --- in task aveti de facut cu flexbox
+    */
+    display:flex;
+
+    border:2px solid var(--culoare-umbre);
+
+    /*fara border in partea de jos*/
+    border-bottom: none;
+
+    /*rotunjesc doar colturile de sus:*/
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: linear-gradient(rgb(175, 126, 126), rgb(211, 132, 132) 50%, var(--culoare-highlight));
+    color:var(--culoare-background);
+    transition:all 0.5s linear;
+    text-align: center;
+}
+
+.taburi-iframe a+a{
+    
+    margin-left:-5px;
+}
+
+.taburi-iframe a:hover{
+    color:white;
+    width:120px;
+    /*ca sa anulez efectul gradientului si sa se vada imaginea din spate*/
+    background-image: none;
+    background-color: var(--culoare-umbre);
+}
+
+#ifr_video{
+    width:1440px;
+    height:806px;
+}
+
+
+#link-top{
+    position: fixed;
+    display:block;
+    opacity:40%;
+    bottom:0;
+    right:0;
+    width:60px;
+    height:60px;
+    background-color: var(--culoare-background);
+    border-radius: 3rem;
+    border-top-left-radius: 50;
+    border-bottom-right-radius: 50;
+    border-top-left-radius: 50;
+    border-top-right-radius: 50;
+    border:1px solid var(--culoare-background);
+    box-shadow:0px 2px 7px 2px inset var(--culoare-border);
+    overflow:visible;
+}
+#link-top:hover{
+    transition:all 0.3s linear;
+    opacity:1;
+}
+#triunghi{
+    position:absolute;
+    bottom:15px;
+    right:15px;
+    
+    border-bottom:30px solid transparent;
+    border-top:0px solid transparent;
+    border-left:15px solid var(--culoare-background);
+    border-right:15px solid var(--culoare-background);
+
+    border-top-left-radius: 10;
+    border-bottom-right-radius: 10;
+    border-top-left-radius: 10;
+    border-top-right-radius: 10;
+    background-color:var(--culoare-highlight);   
+    /* background-clip: border-box; */
+    padding:0;
+    width:0;
+    box-sizing:border-box;
+}
+#triunghi_mic{
+    position:absolute;
+    bottom:21px;
+    right:25px;
+    
+    border-bottom:10px solid transparent;
+    border-top:0px solid transparent;
+    border-left:5px solid var(--culoare-highlight);
+    border-right:5px solid var(--culoare-highlight);
+
+    border-top-left-radius: 10;
+    border-bottom-right-radius: 10;
+    border-top-left-radius: 10;
+    border-top-right-radius: 10;
+    background-color:var(--culoare-background);   
+    /* background-clip: border-box; */
+    padding:0;
+    width:0;
+    box-sizing:border-box;
+}
+#triunghi::after{
+    position:absolute;
+    display: block;
+    left:-20px;
+    content:" ";
+    width:40px;
+    height:40px;
+    background-position: center 15px;
+    background-repeat:no-repeat;
+    background-size: 20px 20px;
+
+}

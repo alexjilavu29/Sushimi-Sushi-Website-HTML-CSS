@@ -1,0 +1,110 @@
+main{
+    --padd-main:1rem;
+    padding-left:var(--padd-main);
+    padding-right:var(--padd-main);
+}
+
+.grid-produse{
+    display:grid;
+    grid-template-columns: 2fr;
+    grid-gap:1rem;
+}
+.grid-produse .produs{
+    border-radius: 1rem;
+    box-shadow: 0px 0px 0.8rem 0.3rem grey;
+    overflow: hidden;
+}
+
+.grid-produse .produs h3{
+    background-color: var(--culoare-umbre);
+    text-align: center;
+    margin-top: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+/* figure{
+    width: 400px;
+    height: 300px;
+} */
+.grid-produse .produs h3 a{
+    color:black;
+}
+.grid-produse .produs h3 a:hover{
+    color:white;
+}
+.grid-produse .produs figure{
+    text-align: center;
+}
+.grid-produse .produs figure img{
+    border:1px solid grey
+}
+
+.chenar-prod{
+    display: grid;
+    grid-template-columns: 0.01fr 0.01fr;
+    grid-template-areas: "imagine-prod" "informatii-prod",
+                        "imagine-prod"  "informatii-prod";
+    margin-left: 10px;
+}
+
+.grid-produse .produs .info-prod{
+     display:inline-table;
+     border-radius: 1rem;
+     margin-left: 1500px; 
+    background-color: rgba(207, 59, 33, 0.815);
+    margin-bottom: 10px;
+}
+.grid-produse .produs .info-prod p{
+    font-size: 20px;
+    text-align:center;
+    font-weight:bold;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.grid-produse .produs p.categorie{
+
+    text-align:center;
+    font-weight:bold;
+}
+
+.info-produse{
+    background-color: var(--culoare-highlight);
+    padding:0.2rem;
+    box-shadow: 0px 0px 0.5rem 0.15rem grey;
+}
+
+.produs{
+    position: relative;
+}
+.selecteaza-cos{
+    display: inline-block;
+    background-color: var(--culoare-umbre);
+    position:absolute;
+    bottom:0.8rem;
+    right:3.2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding:0.3rem;
+    border:1px solid transparent;
+}
+
+.selecteaza-cos:hover{
+    background-color: var(--culoare-highlight);
+    
+    border:1px solid  var(--culoare-umbre);
+}
+#grid-produse .produs p:nth-of-type(even){
+    background: var(--culoare-umbre);
+}
+#grid-produs .produs p:nth-of-type(odd){
+    background: var(--culoare-highlight);
+}
+
+#informatii-prod{
+    grid-area: informatii-prod;
+}
+
+#imagine-prod{
+    grid-area: imagine-prod;
+}

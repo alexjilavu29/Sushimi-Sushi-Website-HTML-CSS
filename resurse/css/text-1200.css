@@ -1,0 +1,35 @@
+p.text_mare{
+    font-size: 32px;
+    font-weight:bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p.text_articol{
+    font-size: 18px;
+    font-family: Arial;
+}
+
+#text_articol_id{
+    font-size: 18px;
+    font-family: Arial;
+}
+
+p.text_titlu{
+    font-size:26px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#text_titlu_id{
+    font-size:26px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#titlu_inserat
+{
+    position:relative;
+    color:white;
+    text-align: center;
+    text-decoration: overline underline;
+    font-size:42px;
+}

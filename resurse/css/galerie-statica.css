@@ -1,0 +1,73 @@
+   
+   body{
+    margin:0;
+    min-width:0px;
+    padding: 0px;
+    border-top: none;
+    border-right: none;
+   }
+
+#galerie-statica {
+    display: grid;
+    /* grid-template-columns: 400px 400px 400px 400px;
+    grid-template-rows: 340px; */
+    grid-template-areas: "temaki" "saba" "nigiri" "tempura"
+                         "uramaki" "nimic" "nimic" "sashimi"
+                         "oshinko" "unagi" "chirashi" "unagimaki";
+    grid-gap:2px;
+   }
+   #galerie-statica section{
+
+    border:3px dotted rgb(209, 179, 178);
+    border-image:url("../imagini/background_grid.jpg") 100 round;
+    padding:4%;
+}
+
+figure{
+    margin:0;
+    padding:0;
+    width: 400px;
+    height: 300px;
+}
+
+   @media screen and (max-width:700px){
+     #galerie-statica {   
+      display:block;
+      grid-template-columns: 700px;
+      grid-template-rows:400px;
+     }
+   }
+
+   #temaki{
+       grid-area:temaki;
+   }
+   #saba{
+       grid-area:saba;
+   }
+   #nigiri{
+       grid-area:nigiri;
+   }
+   #tempura{
+       grid-area:tempura;
+   }
+   #uramaki{
+       grid-area:uramaki;
+   }
+   #sashimi{
+       grid-area:sashimi;
+   }
+   #oshinko{
+       grid-area:oshinko;
+   }
+   #unagi{
+       grid-area:unagi;
+   }
+   #chirashi{
+       grid-area:chirashi;
+   }
+   #unagimaki{
+       grid-area:unagimaki;
+   }
+   #nimic{
+       grid-area:nimic;
+   }
