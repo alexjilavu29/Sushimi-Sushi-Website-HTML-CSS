@@ -1,0 +1,41 @@
+{
+    "cale_baza": "resurse/imagini/erori",
+    "eroare_default":{
+        "titlu":"Eroare.",
+        "text": "A survenit eroare.",
+        "imagine":"interzis.png"
+    },
+    "erori": [
+        {
+            "identificator":404,
+            "status":true,
+            "titlu":"Eroare Tip 404.",
+            "text": "Adresa cerută a apelat server-ul greșit!",
+            "imagine":"lupa.png"
+        },
+        {
+            "identificator":403,
+            "status":true,
+            "titlu":"Eroare Tip 403.",
+            "text": "Rutare greșită.",
+            "imagine":"interzis.png"
+        },
+        
+        {
+            "identificator":1,
+            "status":false,
+            "titlu":"Site în lucru",
+            "text": "Vă rugăm reveniți mai târziu.",
+            "imagine":"interzis.png"
+        },
+        
+        {
+            "identificator":2,
+            "status":false,
+            "titlu":"Eroare bază de date.",
+            "text": "Reveniți mai târziu!",
+            "imagine":"interzis.png"
+        }
+    ]
+}
+  

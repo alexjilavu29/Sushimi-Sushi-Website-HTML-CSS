@@ -1,0 +1,33 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"cale_imagine":"chirashi.jpg",
+			"descriere":"Chirashi"
+		},
+		{
+			"cale_imagine":"nigiri_traditionale.jpg",
+			"descriere":"Nigiri traditionale"
+		},
+		{
+			"cale_imagine":"Oshinko_Maki.jpg",
+			"descriere":"Oshinko Maki"
+		},
+		{
+			"cale_imagine":"sashimi_traditional.jpg",
+			"descriere":"Sashimi traditional"
+		},
+		{
+			"cale_imagine":"Temaki.jpg",
+			"descriere":"Temaki"
+		},
+		{
+			"cale_imagine":"unagi_maki.jpg",
+			"descriere":"Unagi Maki"
+		},
+		{
+			"cale_imagine":"uramaki.jpg",
+			"descriere":"Uramaki"
+		}
+	]
+}
