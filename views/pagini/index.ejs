@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Locul perfect pentru a savura fiecare nuanță a artei japoneze Sushi, împreună cu bucuria boabelor de tapioca, direct la tine în pahar!" />
+        <meta name="keywords" content="sushi, bubble tea, bucatarie chinezeasca, restaurant chinezesc, sushi bar" />
+        
+        <title>| Acasa | Sushimi * Sushi & Bubble Tea * </title>
+        <%- include("../fragmente/head.ejs") %>
+    </head>
+    <body>
+
+        <%- include("../fragmente/header.ejs") %>
+    <main>
+        
+        <section id="welcome">
+            <div class="container">
+                <div id="grid-galerie">
+                  
+                        <img src="resurse/imagini/maki_rolls.jpg" alt="maki_rolls" class="img_hero">
+
+                   
+                        <img src="resurse/imagini/sashimi_traditional.jpg" alt="sashimi" class="img_hero">
+
+                 
+                        <img src="resurse/imagini/nigiri_traditionale.jpg" alt="nigiri" class="img_hero">
+
+                   
+                        <img src="resurse/imagini/tempura_rolls.jpg" alt="tempura" class="img_hero">
+
+                 
+                        <img src="resurse/imagini/uramaki.jpg" alt="uramaki" class="img_hero">
+
+                  
+                        <img src="resurse/imagini/Oshinko_Maki.jpg" alt="oshinko" class="img_hero">
+                    
+                </div>
+                <img src="resurse/imagini/background_rosu.jpg" class="background_rosu" alt="Rosu">
+                <div class="centru">
+                    <h2 id="titlu_inserat">Kon'nichiwa! Bun venit la Sushimi!</h2>
+                </div>
+            </div>
+        </section>
+        <div class="container_hr">
+            <!-- Task 3.9 stilizare-hr -->
+            <div class="hr_stil">
+                <hr id="hr1">
+            </div>
+            <div class="hr_stil">
+                <hr id="hr2">
+            </div>
+        </div>
+        <!-- <br/>
+        <select multiple size="3" id="creaturi">
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+            <option value="d">d</option>
+            <option value="e">e</option>
+            <option value="f">f</option>
+        </select> -->
+        <div id="grid_pagina">
+            <section id="utilizatori_online">
+                <p class="text_mare"> Utilizatori Online: </p>
+                <ul>
+                    <li>
+                        <p class="text_articol">Popescu Gigel </p>
+                    </li>
+                    <li>
+                        <p class="text_articol">Ionescu Ana </p>
+                    </li>
+                    <li>
+                        <p class="text_articol">Jilavu Alexandru </p>
+                    </li>
+                    <li>
+                        <p class="text_articol">Gheorghe Ion </p>
+                    </li>
+                </ul>
+            </section>
+            <section id="date_utilizator">
+                <p class="text_mare">Bun venit, Alexandru!</p>
+                <p class="text_articol"> Ultima dată când ai accesat site-ul nostru a fost pe data de: <time
+                        datetime="2022-05-28 18:23">29.05.2022</time>.</p>
+                <p class="text_articol"> Email-ul asociat contului tău este: <a
+                        href="mailto:alexandrujilavu29@gmail.com">alexandrujilavu29@gmail.com</a>.</p>
+                <p class="text_articol"> Ai 5 produse în coșul de cumpărături.</p>
+            </section>
+            <section id="date_server">
+                <p class="text_mare"> Server-ul este activ! </p>
+                <p class="text_articol"> IP-ul dumneavoastră este: <%- locals.ip %> </p>
+                <p class="text_articol"> Sunt X utilizatori pe site la momentul de față. </p>
+            </section>
+            <section id="calendar">
+                <p class="text_mare"> Calendar</p>
+                    <div id="calendar", style="position:absolute; padding-left: 200px;">
+                        <div>L</div>
+                        <div>Ma</div>
+                        <div>Mi</div>
+                        <div>J</div>
+                        <div>V</div>
+                        <div>S</div>
+                        <div>D</div>
+                    <% 
+                    nrZile=[31,28,31,30,31,30,31,31,30,31,30,31];
+                    d=new Date();
+                    anCurent=d.getFullYear();
+                    lunaCurenta=d.getMonth();
+                    if(anCurent%400==0 || (anCurent%4==0 && anCurent%100!=0)) nrZile=29;
+                    let nrZileCalendar=nrZile[lunaCurenta]
+                    primaZiLuna=new Date(anCurent, lunaCurenta, 1);
+                    ultimaZiLuna=new Date(anCurent, lunaCurenta, nrZileCalendar);
+                    ziSaptPrimaZiLuna=(primaZiLuna.getDay()-1+7)%7;
+                    ziSaptUltimaZiLuna=(ultimaZiLuna.getDay()-1+7)%7;
+                    for (let i=0;i<ziSaptPrimaZiLuna;i++){
+                     %>
+                     <div></div> 
+                     <% } 
+    
+                     
+                     for (let i=1;i<=nrZileCalendar;i++){
+                        var obiectEvenimente=null;
+                            if(locals.evenimente)
+                                 obiectEvenimente=locals.evenimente.find(function(elem){ return elem.data.valueOf()==new Date(anCurent,lunaCurenta,i).valueOf()})
+                         if(obiectEvenimente)
+                         {
+                         %>
+                         <div class="zi eveniment" title="<%= obiectEvenimente.text %>"><%= i %></div> 
+                         <%
+                         }
+                         else{
+                        %>
+                        <div class="zi"><%= i %></div> 
+                        <% } 
+                    } %>
+                    </div>
+                    <%
+                    dataServer=new Date();
+                    sirData=dataServer.getHours()+":"+dataServer.getMinutes()+":"+dataServer.getSeconds()
+    
+                    %>
+            </section>
+            <section id="anunturi">
+                <p class="text_mare"> ANUNȚURI </p> <!-- Task 1.12 -->
+                <ul>
+                    <li>
+                        <details>
+                            <summary id="text_titlu_id">Ne schimbăm locația!</summary>
+                            <p class="text_articol">Locația principală a restaurantului Sushimi București se va muta din
+                                vechea locație din
+                                Piața Victoriei în Parcul Iore! Ne găsești fix lângă mall!</p>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary id="text_titlu_id">Angajăm!</summary>
+                            <p class="text_articol">Avem nevoie de un al doilea bucătar pentru a face față cu nivelul de
+                                comenzi! Dacă ești
+                                interesat, contactează-ne!</p>
+                        </details>
+                    </li>
+                </ul>
+            </section>
+            <section id="program" style="font-size:24px;">
+                <div id="div_orar">
+                    <table id="orar">
+                        <caption> Program de activitate</caption>
+                        <thead>
+                            <tr>
+                                <th>Cod</th>
+                                <th>Perioadă</th>
+                                <th>Zi</th>
+                                <th>Program restaurant</th>
+                                <th>Sushi Bar</th>
+                                <th>Comenzi Online</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td rowspan="5">Zile<br />Lucrătoare</td>
+                                <td>Luni</td>
+                                <td rowspan="4">9:00-22:00</td>
+                                <td>20:00-22:00</td>
+                                <td rowspan="5">10:00-21:00</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Marti</td>
+
+                                <td>19:00-21:00</td>
+
+                            </tr>
+                            <tr>
+
+                                <td></td>
+                                <td>Miercuri</td>
+
+                                <td>20:00-22:00</td>
+
+                            </tr>
+                            <tr>
+
+                                <td></td>
+                                <td>Joi</td>
+
+                                <td>19:00-21:00</td>
+
+                            </tr>
+                            <tr>
+
+                                <td></td>
+                                <td>Vineri</td>
+                                <td>9:00-24:00</td>
+                                <td>19:00-23:00</td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td rowspan="2">Weekend</td>
+                                <td>Sâmbătă</td>
+                                <td>11:00-2:00</td>
+                                <td>18:00-23:00</td>
+                                <td rowspan="2">Toată ziua</td>
+                            </tr>
+                            <tr>
+
+                                <td></td>
+                                <td>Duminică</td>
+                                <td>12:00-23:00</td>
+                                <td>19:00-22:00</td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">Orarul poate suferi modificări!</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+            <section id="poveste">
+                <!-- Task 1.6 -->
+                <p class="text_mare"> De unde a început totul? </p>
+                <article style="font-size:larger;">
+                    <h3 id="text_titlu_id"> Originea Sushi </h3>
+                    <p> <dfn>Sushi (すし, 寿司, 鮨 sushi) este un preparat servit cu orez oțetit sau acrit (鮨飯
+                            <i>sushi-meshi</i>), combinat cu diverse alte ingrediente. </dfn>
+                        Principalul ingredient este orezul (acrit cu oțet) combinat cu diferite alimente, gătite sau în
+                        stare crudă, cel mai adesea pește crud,
+                        cu alte ingrediente (ネタ <i>neta</i>).
+                        <br />
+                        Printre cele mai populare condimente tradiționale folosite la sushi se numără:
+                    <ol>
+                        <!-- Task 1.7 -->
+                        <li>Shōyu</li>
+                        <p>--> denumirea japoneză a sosului de soia, un condiment esențial în servirea sushi-ului</p>
+                        <li>Wasabi</li>
+                        <p>--> o pastă picantă de culoare verde, cu gust asemănător hreanului</p>
+                        <li>Gari</li>
+                        <p>--> denumirea japoneză pentru rădăcină de ghimbir murată</p>
+                        <li>O-cha</li>
+                        <p>--> denumirea japoneză pentru ceai verde</p>
+                    </ol>
+                    Sushi este o mâncare relativ nouă chiar și în Japonia. A fost gătită pentru prima oară la începutul
+                    secolului al XIX-lea. </p>
+                    <aside>
+                        <h4 id="text_articol_id"> Începutul secolului al XIX-lea</h4>
+                        <p>În acele vremuri, orezul acrit cu oțet era folosit ca metodă de conservare prin fermentație a
+                            peștelui, peștele fiind învelit complet în astfel de orez.</p>
+                    </aside>
+                </article>
+                <article style="font-size:larger;">
+                    <h3 id="text_titlu_id">Trend-ul care a cucerit planeta</h3>
+                    <p>Pe parcursul ultimilor ani, sushi au atins cele mai înalte cote ale popularității. Acestea pot fi
+                        livrate acasă,
+                        în oficiu sau pot fi servite în cadrul unui restaurant sau a unei cafenele, de către cei care
+                        preferă să savureze
+                        la maxim atmosfera japoneză.</p>
+                    <figure>
+                        <!-- Task 1.8 -->
+                        <picture>
+                            <source srcset="./resurse/imagini/sushi1_25.jpg" media="(max-width:700px)" />
+                            <source srcset="./resurse/imagini/sushi1_1_50.jpg" media="(max-width:1200px)" />
+                            <img src="./resurse/imagini/sushi1.jpg" alt="Sushi 1" title="descriere imagine" />
+                        </picture>
+                        <!-- <figcaption>Sushi</figcaption> -->
+                    </figure>
+                    <p>Puteți da Click aici pentru a descărca imaginea de mai sus: <a
+                            href="./resurse/imagini/sushi1.jpg" download>
+                            <img src="./resurse/imagini/download.png" alt="Download" width="30" height="30">
+                        </a></p>
+
+                    <!-- Task 1.11d -->
+
+                    <p>Ei bine, la capitolul sushi merită să menționăm că diversitatea acestora poate intimida chiar și
+                        pe cel mai pretențios gurmand. Atunci, ce tip de sushi merită să alegem?</p>
+                    <p>Iată cele mai populare tipuri de sushi:</p>
+                    <ol>
+                        <li> Nigiri tradiționale </li>
+                        <li> Pește Sashimi </li>
+                        <li> Rulouri Maki </li>
+                        <li> Temaki </li>
+                        <li> Rulouri Tempura </li>
+                    </ol>
+                    <p> Psst... Le avem pe toate pe site! </p>
+                    
+                <a href="https://www.femeia.ro/gastronomie/cate-tipuri-de-sushi-exista-si-cum-se-mananca-corect">Crezi că mănânci corect Sushi? Mai gândește-te!</a>
+                </article>
+                <article style="font-size:larger;">
+                    <!-- Task 1.10 -->
+                    <h3 id="text_titlu_id"> Cum putem uita de băutura care a călătorit o lume întreagă? <em>Bubble
+                            Tea!</em></h3>
+                    <p> Băutura își are originea în <b>Taiwan</b> din anii 1980. <dfn>Aceasta reprezintă un amestec
+                            aromat de ceai
+                            și lapte, împreună cu faimoasele boabe de tapioca, care împlinesc gustul băuturii și îi aduc
+                            look-ul renumit.</dfn>
+                    </p>
+                    <p> Pentru mai multe informații, vă invităm să aflați mai multe despre această inventivă băutură
+                        făcând Click <a href="https://en.wikipedia.org/wiki/Bubble_Tea" target="_blank">aici</a>.</p>
+                    <!-- Task 1.11a-->
+                    <figure>
+                        <picture>
+                            <source srcset="./resurse/imagini/bt_300x200.jpg" media="(max-width:700px)" />
+                            <source srcset="./resurse/imagini/bt_600x400.jpg" media="(max-width:1200px)" />
+                            <img src="./resurse/imagini/bt_750x500.jpg" alt="Bubble Tea" title="descriere imagine" />
+                        </picture>
+                        <!-- <figcaption>Sushi</figcaption> -->
+                    </figure>
+                </article>
+                <article>
+                    <h3 id="text_titlu_id"> Mai jos aveți o scurtă prezentare video, dacă doriți să încercați acasă!
+                    </h3>
+                    <!-- Task 1.11c -->
+
+                    <br />
+                    <iframe name="ifr-video" id="ifr_video" src="https://www.youtube.com/embed/Gj0LdkEeJhM"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div class="taburi-iframe">
+                        <div><a href="https://www.youtube.com/embed/Gj0LdkEeJhM" target="ifr-video">Sushi</a> </div>
+                        <div> <a href="https://www.youtube.com/embed/1hYrPBt_sQM" target="ifr-video">Bubble Tea</a>
+                        </div>
+                    </div>
+                </article>
+                <div id="galerie-animata" class="galerie-a">
+                    <% for (let imag of locals.imagini){  %>
+                        <figure>
+                            <picture>
+                                <!-- il ia pe primul care se potriveste cu query-ul din media-->
+                                <source srcset="/<%-imag.mic%>" media="(max-width:700px)"/>
+                                <img src="/<%-imag.mic%>" alt="text"/>
+                            </picture>
+                            <figcaption><%-imag.descriere%></figcaption>
+                        </figure>
+                    <% } %>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+    <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>

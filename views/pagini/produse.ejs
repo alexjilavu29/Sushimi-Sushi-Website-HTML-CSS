@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Locul perfect pentru a savura fiecare nuanță a artei japoneze Sushi, împreună cu bucuria boabelor de tapioca, direct la tine în pahar" />
+    <meta name="keywords" content="sushi, bubble tea, bucatarie chinezeasca, restaurant chinezesc, sushi bar" />
+    <title>| Produse | Sushimi * Sushi & Bubble Tea * </title>
+
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+
+    <%- include("../fragmente/head") %>
+    <script type="text/javascript" src=/resurse/js/produse.js></script>
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <label style="color:white"> Nume: <input type="text" id="inp-nume"></label>
+        <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
+        <br/>
+        <label style="color:white"> Pret maxim: [0]<input type="range" id="inp-pret" value="0" min="0" max="50"> [50] <span id="infoRange">(0)</span></label>
+        <div style="color:white"> Calorii:
+            <label>Dietetic (Calorii &lt; 200)
+                <input id="i_rad1" name="gr_rad" value="1" type="radio" />
+            </label>
+            <label>Mediu (200 &le; Calorii &lt; 301)
+                <input id="i_rad2" name="gr_rad" value="2" type="radio" />
+            </label>
+            <label>Ridicat caloric (Calorii &ge; 350)
+                <input id="i_rad3" name="gr_rad" value="3" type="radio" />
+            </label>
+            <label>Fără filtru
+                <input id="i_rad4" checked name="gr_rad" value="4" type="radio" />
+            </label>
+        </div>
+        <form>
+            <h3 style="color:white">Ce ingrediente doriti in sushi?</h3>
+            <input type="checkbox" id="ingreident1" name="ingrediente_check" value="orez">
+            <label for="ingreident1" style="color:white"> Orez</label><br>
+            <input type="checkbox" id="ingredient2" name="ingrediente_check" value="alge_marine">
+            <label for="ingredient2" style="color:white"> Alge marine</label><br>
+            <input type="checkbox" id="ingredient3" name="ingrediente_check" value="Somon">
+            <label for="ingredient3" style="color:white"> Somon</label><br>
+            <input type="checkbox" id="toate" name="toate" value="toate">
+            <label for="toate" style="color:white"> Nu conteaza</label><br><br>
+          </form>
+          <br/>
+        <label style="color:white">Select simplu:
+            <select id="inp-categorie">
+                <option id="sel-toate" selected value="toate">Oricare</option>
+                <% for (let opt of locals.optiuni) { %>
+                <option value="<%- opt %>"><%- opt %> </option>
+                <% } %>
+            </select>
+        </label>
+        <form>
+            <label for="tip_produs" style="color:white"><h3>De unde doriti sa comandati?</h3></label>
+            <select name="tipuri" id="tip_produs" multiple>
+              <option value="sushi bar">Sushi Bar</option>
+              <option value="bubble tea">Bubble Tea</option>
+              <option value="restaurant">Restaurant</option>
+            </select>
+            <br><br>
+          </form>
+        <p >
+            <button id="filtrare">Filtreaza</button> <button id="resetare">Reseteaza</button><br />
+            <button id="sortCrescNume">Sorteaza crescator dupa nume si pret</button>
+            <button id="sortDescrescNume">Sorteaza descrescator dupa nume si pret</button>
+
+        </p>
+
+        <p id="p-suma" style="color:white">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                <article class="produs">
+                    <h3 class="nume" style="font-size:30px; font-weight:bolder" >Nume: <a href="/produs/<%-prod.id %>"><span
+                                class="val-nume"><%- prod.nume%></span></a></h3>
+                    <div class="chenar-prod">
+                        <section class="info-prod" id="informatii-prod">
+                            <p class="pret"><span style="font-weight:bold;background-color:rgba(255, 189, 189, 0.589); border-radius: 0.5rem;">  Pret: </span><span class="val-pret"><%- prod.pret%></span></p>
+                            <p class="calorii"><span style="font-weight:bold;background-color:rgba(255, 189, 189, 0.589); border-radius: 0.5rem;">  Calorii: </span><span class="val-calorii"><%- prod.calorii%></span></p> 
+                            <p class="bucati"><span style="font-weight:bold;background-color:rgba(255, 189, 189, 0.589); border-radius: 0.5rem;">  Bucăți: </span><span class="val-bucati"><%- prod.bucati%></span></p>
+                            <p class="ingrediente"><span style="font-weight:bold;background-color:rgba(255, 189, 189, 0.589); border-radius: 0.5rem;">  Ingrediente: </span><span class="val-ingrediente"><%- prod.ingrediente %></span></p>
+                            <p class="data"><span style="font-weight:bold;background-color:rgba(255, 189, 189, 0.589); border-radius: 0.5rem;">  Data: </span><time datetime="<%- prod.data_adaugare %>"><%- prod.data_adaugare %></time></p>
+                            <p class="vegetarian"><span style="font-weight:bold;background-color:rgba(255, 189, 189, 0.589); border-radius: 0.5rem;">  Vegetarian: </span><span class="val-vegetarian"><%- prod.vegetarian %></span></p>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <label class="selecteaza-cos">
+                                Selectează:<br />
+                                <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                            </label>
+                        </section>
+                        
+                        <section id="imagine-prod">
+                            <p class="categorie" style="text-align:left;margin-left: 20px;font-size: 30px;margin-top: 3px;">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
+                        <figure>
+                            <a href="/produs/<%-prod.id %>"><img src="/resurse/imagini/produse/<%- prod.imagine %>"
+                                    style="padding:1%; margin-left: 10px;height:250px;width:400px;display: block;margin-bottom: 0px;"
+                                    alt="[imagine <%- prod.nume %>]" /></a>
+                        </figure>
+                        <p class="descriere" style="text-align:left;margin-left: 20px;font-size: 35px; margin-top: 0px;margin-right: 200px;">Descriere:<span class="val-categorie"><%- prod.descriere%></span></p>
+                        
+                    </section>
+                    </div>
+                </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+</body>
+
+</html>

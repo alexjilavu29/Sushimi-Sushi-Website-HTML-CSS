@@ -1,0 +1,83 @@
+<header>
+    <!-- Task 1.4 -->
+
+    <style>
+        h1 {
+            text-align: right;
+            padding-right: 15px;
+            color: white;
+        }
+
+        #hr1 {
+            display: flex;
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            border-style: dashed;
+            border-bottom: 300px solid transparent;
+            border-top: 500px solid transparent;
+            border-left: 300px solid var(--culoare-text);
+            border-right: 500px solid var(--culoare-text);
+            border-width: 30px;
+
+        }
+
+        #hr2 {
+            display: auto;
+            border-width: 5px;
+            border-bottom: 2.5px solid var(--culoare-text);
+            border-top: 2.5px solid var(--culoare-text);
+        }
+        
+    </style>
+    <!-- <script>
+        var tipuri=document.getElementById("tip_produs").value="<%= locals.tip_produs %>";
+    </script> -->
+    <h1> Sushimi Restaurant Online </h1> <!-- Task 1.5 -->
+    <nav>
+        <label id="hamburger" for="ch-meniu">
+            <img id="meniu-icon" src="resurse/imagini/Hamburger_icon_negru.png" alt="menu" height="50" width="50">
+        </label>
+        <input id="ch-meniu" type="checkbox">
+        <ul class="meniu">
+            <li>
+                <div id="culoare_acasa"> <img id="casa-icon" src="resurse/imagini/casa-icon.png" alt="Home"
+                        height="25" width="25"> Acasă</div>
+                <ul class="submeniu">
+                    <!-- Lista neordonata -->
+                    <li><a href="/home">Pagina principală</a></li>
+                    <li><a href="/home#utilizatori_online">Utilizatori Online</a></li>
+                    <li><a href="/home#date_utilizator">Informații Utilizator</a></li>
+                    <li><a href="/home#date_server">Informații Server</a></li>
+                    <li><a href="/home#calendar">Calendar</a></li>
+                    <li><a href="/home#anunturi">Anunțuri</a></li>
+                    <li><a href="/home#program">Program</a></li>
+                    <li><a href="/home#poveste">Poveste</a></li>
+                </ul>
+            </li>
+            <li>
+                <div> Produse </div>
+                <ul class="submeniu">
+                    <li><a href="/produse#toate">Toate produsele</a></li>
+                    <li><a href="/produse?tip=sushi bar">Sushi Bar</a></li>
+                    <li><a href="/produse?tip=restaurant">Restaurant</a></li>
+                    <li><a href="/produse?tip=bubble tea">Bubble Tea</a></li>
+                </ul>
+            </li>
+            <li><a href="/galerie">Galerie</a></li>
+            <li><a href="/jucarii">Problema Examen</a></li> 
+            <li>
+                <div> Contact </div>
+                <ul class="submeniu">
+                    <li><a href="/despre">FAQ</a></li>
+                    <li><a href="/despre">Contactează-ne</a></li>
+                    <li><a href="/despre">Lasă-ne un review!</a></li>
+                </ul>
+            </li>
+            <li>
+                <div> Contul meu </div>
+            </li>
+        </ul>
+    </nav>
+</header>

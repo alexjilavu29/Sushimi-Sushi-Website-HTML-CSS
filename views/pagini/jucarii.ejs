@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <title> Problema Jucarii </title>
+        
+        <link rel="stylesheet" href="/resurse/css/jucarii.css" type="text/css" />
+
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/jucarii.js></script>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main id="total_jucarii">
+        <!-- <label> Nume: <input type="text" id="inp-nume"></label> -->
+        <!-- <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="1000"> <span id="infoRange">(0)</span></label> -->
+        <p>
+        <button id="filtrare">Filtrează</button> <button id="resetare">Resetează</button><br/>
+        
+        <label for="culori", style="color:white;">Filtrare:</label>
+        <select id="culori">
+        <option value="Toate" selected>Toate</option>
+        <option value="rosu">Rosu</option>
+        <option value="verde">Verde</option>
+        <option value="albastru">Albastru</option>
+        <option value="alb">Alb</option>
+        <option value="galben">Galben</option>
+        <option value="roz">Roz</option>
+        </select>
+        <button id="ascendent">Sortează jucăriile crescător după vârstă minimă și preț</button>
+        <button id="descendent">Sortează jucăriile descrescător după vârstă minimă și preț</button>
+        </p>
+        <section id="jucarii">
+            <h2 style="text-align:center;font-size:60px;font-family: Verdana, Geneva, Tahoma, sans-serif;color:khaki">Jucării</h2>
+            <div class="grid-jucarii">
+                <% for( let juc of locals.jucarii) { %>
+                    <article class="jucarie" >
+                        <h3 class="nume">Nume: <a href="/jucarie/<%-juc.id %>" ><span class="val-nume"><%- juc.nume%></span></a></h3>
+                        <div class="info-juc">
+                            <p class="pret">Pret: <span class="val-pret"><%- juc.pret%></span></p>
+                            <p class="varsta_minima">Varsta Minima: <span class="val-varsta_minima"><%- juc.varsta_minima%></span></p>
+                            <p class="culori">Culori:<ol type="a"> <span class="culori"> <li><%- juc.culori %> </li></span></ol></p>
+                        </div>
+                    </article>
+                <% }%>
+            </div>
+        </section>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

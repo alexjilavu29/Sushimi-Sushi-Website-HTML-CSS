@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Locul perfect pentru a savura fiecare nuanță a artei japoneze Sushi, împreună cu bucuria boabelor de tapioca, direct la tine în pahar" />
+        <meta name="keywords" content="sushi, bubble tea, bucatarie chinezeasca, restaurant chinezesc, sushi bar" />
+        <title>| Înregistrare | Sushimi * Sushi & Bubble Tea * </title>       
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/inregistrare.js></script>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+    <div class="afisaj">
+        <h1>Înregistrare Utilizator</h1>
+        
+		<% if (locals.err !="") { %>
+			<%-include("../fragmente/formular", {action: "/inreg"}) %>
+	<% } %>
+	<% if(locals.raspuns) { %>
+	<%- locals.raspuns+"<br/>"%>
+	<% } %>
+	<% if(locals.err) { %>
+	<%- locals.err %>
+	<% } %>
+    </div>
+</main>
+
+<footer>
+    <%- include("../fragmente/footer") %>
+</footer>
+
+</body>
+</html>

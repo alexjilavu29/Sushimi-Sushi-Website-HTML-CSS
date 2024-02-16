@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <title>| Pagină produs | Problema Jucarii </title>
+        <%- include("../fragmente/head") %>  
+        <link href="/resurse/css/jucarie.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-jucarie">
+                    <h3><span class="nume"><%- locals.juc.nume %></span></h3>
+                    <p>Pret: <span class="pret"><%- locals.juc.pret %> </span></p>
+                    <p>Varsta minima: <span class="varsta_minima"><%- locals.juc.varsta_minima %> </span></p>
+                    <p>Culori: <span class="culori"><%- locals.juc.culori %> </span></p>
+                    <p>Data adăugare: <span class="categorie"><%- locals.juc.data_adaugare %> </span></p>  
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>
